@@ -1,4 +1,6 @@
-
+// Displays the current day and date
+var todayDate = dayjs().format('dddd, MMM D YYYY');
+$("#currentDay").html(todayDate);
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
@@ -23,7 +25,5 @@ $(function () {
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
-    //
-    // TODO: Add code to display the current date in the header of the page.
   });
 
