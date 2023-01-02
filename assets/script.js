@@ -16,6 +16,36 @@ $(document).ready(function () {
     //saving daily planner text into local storage
     localStorage.setItem(time, text);
   })
+
+  function trackedEvent() {
+    
+    var currentTime = dayjs().hour();
+
+    $(".time-block").each(function () {
+
+        var blockTime = parseInt($(this).attr("id").split("hour-")[1]);
+// parseInt the string and grab the attr Id=hour-
+
+        if (blockTime < currentTime) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === currentTime) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+// checking the current time and which class should be added at current time
+        }
+    })
+}
+
+
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. HINT: What does `this` reference in the click listener
@@ -32,5 +62,9 @@ $(document).ready(function () {
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
+
+    // functions being called
+    trackedEvent();
   });
+
 
