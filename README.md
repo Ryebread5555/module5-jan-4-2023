@@ -3,7 +3,7 @@ A simple user friendly calendar that allows the user to enter events for each ho
 
 ## module5-jan-4-2023
 
-* Deployed:
+* Deployed:https://ryebread5555.github.io/module5-jan-4-2023/
 * GitHub: https://github.com/Ryebread5555/module5-jan-4-2023
 
 ## Acceptance Criteria
